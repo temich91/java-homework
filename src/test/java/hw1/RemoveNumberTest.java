@@ -10,14 +10,14 @@ public class RemoveNumberTest {
     private static int[] removeElement(int[] input, int element) {
         int n = input.length;
         int[] result = new int[n];
-        int result_length = 0;
-        for (int i = 0; i < n; ++i) {
-            if (input[i] != element) {
-                result[result_length] = input[i];
-                result_length++;
+        int resultLength = 0;
+        for (var i : input) {
+            if (i != element) {
+                result[resultLength] = i;
+                resultLength++;
             }
         }
-        return Arrays.copyOfRange(result, 0, result_length);
+        return Arrays.copyOfRange(result, 0, resultLength);
     }
 
     @Test

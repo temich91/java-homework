@@ -15,7 +15,7 @@ public class AverageTest {
         if (count == 0) {
             return 0.;
         }
-        for (int num: numbers) {
+        for (int num : numbers) {
             sum += num;
         }
         return sum / count;

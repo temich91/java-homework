@@ -15,7 +15,19 @@ import org.junit.jupiter.api.Assertions;
 class ToUpperCaseOperator implements UnaryOperator<String> {
     @Override
     public String apply(String s) {
-        return s.toUpperCase();
+        String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        String LOWERCASE = "abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        StringBuilder resultString = new StringBuilder();
+        for (int i = 0; i < s.length(); ++i) {
+            char letter = s.charAt(i);
+            int letterIndex = LOWERCASE.indexOf(letter);
+            if (letterIndex != -1) {
+                resultString.append(UPPERCASE.charAt(letterIndex));
+            } else {
+                resultString.append(letter);
+            }
+        }
+        return resultString.toString();
     }
 }
 

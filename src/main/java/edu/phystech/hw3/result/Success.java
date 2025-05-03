@@ -5,12 +5,7 @@ import java.util.function.Function;
 /**
  * @author kzlv4natoly
  */
-public final class Success<T> implements Result<T> {
-    private final T value;
-
-    public Success(T value) {
-        this.value = value;
-    }
+public record Success<T>(T value) implements Result<T> {
 
     @Override
     public boolean isFailure() {

@@ -10,12 +10,12 @@ public class InverseMapKeyValuesTest {
     public static <K, V> Map<V, Collection<K>> inverse(Map<? extends K, ? extends V> map) {
         Map<V, Collection<K>> result = new HashMap<>();
         for (var item : map.entrySet()) {
-            V new_key = item.getValue();
-            K new_value = item.getKey();
-            if (!result.containsKey(new_key)) {
+            V newKey = item.getValue();
+            K newValue = item.getKey();
+            if (!result.containsKey(newKey)) {
                 result.put(item.getValue(), new ArrayList<>());
             }
-            result.get(new_key).add(new_value);
+            result.get(newKey).add(newValue);
         }
         return result;
     }

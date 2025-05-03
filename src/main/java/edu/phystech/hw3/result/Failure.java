@@ -2,12 +2,7 @@ package edu.phystech.hw3.result;
 
 import java.util.function.Function;
 
-public final class Failure<T> implements Result<T> {
-    private final Throwable e;
-
-    public Failure(Throwable e) {
-        this.e = e;
-    }
+public record Failure<T>(Throwable e) implements Result<T> {
 
     @Override
     public boolean isFailure() {
